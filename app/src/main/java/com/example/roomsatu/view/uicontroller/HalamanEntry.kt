@@ -27,6 +27,7 @@ import com.example.roomsatu.view.route.DestinasIEntry
 import com.example.roomsatu.view.viewmodel.DetailSiswa
 import com.example.roomsatu.view.viewmodel.EntryViewModel
 import com.example.roomsatu.view.viewmodel.UiStateSiswa
+import com.example.roomsatu.view.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,7 +35,7 @@ import kotlinx.coroutines.launch
 fun EntrySiswaScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: EntryViewModel = viewModel(factory = PenyediaModel.Factory)
+    viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val coroutinneScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
