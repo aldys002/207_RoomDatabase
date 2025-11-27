@@ -5,13 +5,13 @@ import com.example.roomsatu.room.Siswa
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoriSiswa {
-    fun getAllSiswaSteam(): Flow<List<Siswa>>
+    fun getAllSiswaStream(): Flow<List<Siswa>>
     suspend fun insertSiswa(siswa: Siswa)
 }
 
 class OfflineRepositoriSiswa(
     private val siswaDao: SiswaDao
 ): RepositoriSiswa {
-    override fun getAllSiswaSteam(): Flow<List<Siswa>> = siswaDao.getAllSiswa()
+    override fun getAllSiswaStream(): Flow<List<Siswa>> = siswaDao.getAllSiswa()
     override suspend fun insertSiswa(siswa: Siswa) = siswaDao.insert(siswa)
 }
