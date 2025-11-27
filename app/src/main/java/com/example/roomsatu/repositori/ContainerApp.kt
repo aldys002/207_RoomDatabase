@@ -2,7 +2,7 @@ package com.example.roomsatu.repositori
 
 import android.app.Application
 import android.content.Context
-import com.example.myroomsatu.room.DatabaseSiswa
+import com.example.roomsatu.room.DatabaseSiswa
 
 interface ContainerApp{
     val repositoriSiswa : RepositoriSiswa
