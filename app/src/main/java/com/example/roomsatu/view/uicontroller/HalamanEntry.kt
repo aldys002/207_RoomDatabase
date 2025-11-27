@@ -24,6 +24,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.ViewModel
 import com.example.roomsatu.R
 import com.example.roomsatu.view.route.DestinasIEntry
+import com.example.roomsatu.view.viewmodel.DetailSiswa
 import com.example.roomsatu.view.viewmodel.EntryViewModel
 import kotlinx.coroutines.launch
 
@@ -115,8 +116,8 @@ fun FormInputSiswa(
             singleLine = true
         )
         OutlinedTextField(
-            value = detailSiswa.telepon,
-            onValueChange = {onValueChange(detailSiswa.copy(telepon=it))},
+            value = detailSiswa.telpon,
+            onValueChange = {onValueChange(detailSiswa.copy(telpon = it))},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = {Text(text = stringResource(R.string.telpon))},
             modifier = Modifier.fillMaxWidth(),
