@@ -1,10 +1,9 @@
-package com.example.myroomsatu.room
+package com.example.roomsatu.room
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.roomsatu.room.Siswa
 import kotlinx.coroutines.flow.Flow
 
 @Dao
