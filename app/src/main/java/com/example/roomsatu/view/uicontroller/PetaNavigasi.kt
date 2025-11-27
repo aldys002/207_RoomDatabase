@@ -12,8 +12,11 @@ import com.example.roomsatu.view.route.DestinasiHome
 
 
 @Composable
-fun SiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier){
-    HostNavigasi(navController=navController)
+fun SiswaApp(
+    navController: NavHostController = rememberNavController(),
+    modifier: Modifier = Modifier
+){
+    HostNavigasi(navController=navController, modifier = modifier)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -22,7 +25,7 @@ fun  HostNavigasi(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ){
-    NavHost(navController = navController, startDestination = DestinasiHome.route, modifier= Modifier)
+    NavHost(navController = navController, startDestination = DestinasiHome.route, modifier= modifier)
     {
         composable(DestinasiHome.route) {
             HomeScreen(
