@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Phone
@@ -21,7 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.key
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -93,7 +95,7 @@ fun BodyHome(
                 style = MaterialTheme.typography.titleLarge
             )
         } else {
-            listSiswa(
+            ListSiswa(
                 itemSiswa = itemSiswa,
                 modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_small))
             )
@@ -101,12 +103,13 @@ fun BodyHome(
     }
 }
 
+@Composable
 fun ListSiswa(
     itemSiswa: List<Siswa>,
     modifier: Modifier= Modifier
 ){
-    lazyColumn(modifier=Modifier){
-        items(items = itemSiswa, key { it.id }){
+    LazyColumn (modifier=Modifier){
+        items(items = itemSiswa, key = {it.id}){
             person -> DataSiswa(
                 siswa = person,
                 modifier = Modifier
