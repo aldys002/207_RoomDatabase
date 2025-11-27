@@ -13,7 +13,7 @@ class EntryViewModel (private val repositoriSiswa: RepositoriSiswa): ViewModel()
 
     private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa) : Boolean {
         return with(uiState) {
-            nama.isNotBlank() && alamat.isNotBlank() && telepon.isNotBlank()
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
         }
     }
 
