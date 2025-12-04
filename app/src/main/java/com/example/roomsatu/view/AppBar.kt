@@ -17,11 +17,12 @@ import com.example.roomsatu.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SiswaTopAppBar(
-    title : String,
+    title: String,
     canNavigateBack: Boolean,
     modifier: Modifier = Modifier,
     scrollBehavior: TopAppBarScrollBehavior? = null,
-    navigateUp: () -> Unit = {}
+    navigateUp: () -> Unit = {},
+    navigateBackUp: () -> Unit
 ) {
     CenterAlignedTopAppBar(title = { Text(text = title) },
         modifier = modifier,
