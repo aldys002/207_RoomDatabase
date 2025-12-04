@@ -7,7 +7,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.roomsatu.view.EntrySiswaScreen
+import com.example.roomsatu.view.HomeScreen
 import com.example.roomsatu.view.route.DestinasIEntry
+import com.example.roomsatu.view.route.DestinasiDetailSiswa
 import com.example.roomsatu.view.route.DestinasiHome
 
 
@@ -30,6 +33,7 @@ fun  HostNavigasi(
         composable(DestinasiHome.route) {
             HomeScreen(
                 navigateToItemEntry = { navController.navigate(DestinasIEntry.route) },
+                navigateToItemDetail = {navController.navigate(route = "${DestinasiDetailSiswa.route}/${id}")},
             )
         }
         composable(DestinasIEntry.route) {
