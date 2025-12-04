@@ -1,4 +1,4 @@
-package com.example.roomsatu.view.uicontroller
+package com.example.roomsatu.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
