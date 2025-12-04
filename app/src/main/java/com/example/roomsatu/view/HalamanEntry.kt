@@ -23,7 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomsatu.R
-import com.example.roomsatu.view.route.DestinasIEntry
+import com.example.roomsatu.view.route.DestinasiEntry
 import com.example.roomsatu.view.viewmodel.DetailSiswa
 import com.example.roomsatu.view.viewmodel.EntryViewModel
 import com.example.roomsatu.view.viewmodel.UiStateSiswa
@@ -35,7 +35,8 @@ import kotlinx.coroutines.launch
 fun EntrySiswaScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
+    viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory),
+    uiStateSiswa: UiStateSiswa
 ) {
     val coroutinneScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -43,9 +44,10 @@ fun EntrySiswaScreen(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             SiswaTopAppBar(
-                title = stringResource(DestinasIEntry.titleRes),
+                title = stringResource(DestinasiEntry.titleRes),
                 canNavigateBack = true,
-                scrollBehavior = scrollBehavior
+                navigateBackUp = navigateBack,
+                scrollBehavior = scrollBehavior,
             )
         }) { innerPadding ->
         EntrySiswaBody(

@@ -33,11 +33,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myroomsatu.view.viewmodel.HomeViewModel
 import com.example.roomsatu.room.Siswa
 import com.example.roomsatu.view.route.DestinasiHome
-import com.example.roomsatu.view.viewmodel.HomeViewModel
 import com.example.roomsatu.R
 import com.example.roomsatu.view.viewmodel.provider.PenyediaViewModel
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -56,7 +57,8 @@ fun HomeScreen(
             SiswaTopAppBar(
                 title = stringResource(DestinasiHome.titleRes),
                 canNavigateBack = false,
-                scrollBehavior = scrollBehavior
+                navigateBackUp = {},
+                scrollBehavior = scrollBehavior,
             )
         },
         floatingActionButton = {

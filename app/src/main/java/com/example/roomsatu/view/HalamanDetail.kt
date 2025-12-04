@@ -56,7 +56,7 @@ fun DetailSiswaScreen(
             SiswaTopAppBar(
                 title = stringResource(DestinasiDetailSiswa.titleRes),
                 canNavigateBack = true,
-                navigateUp = navigateBack
+                navigateBackUp = navigateBack,
             )
         },
         floatingActionButton = {
